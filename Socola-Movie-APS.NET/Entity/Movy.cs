@@ -28,6 +28,20 @@ namespace Socola_Movie_APS.NET.Entity
 
         public int category_id { get; set; }
 
+        public DateTime time { get; set; }
+
+        [Column(TypeName = "ntext")]
+        public string acctors { get; set; }
+
+        [Column(TypeName = "ntext")]
+        public string length { get; set; }
+
+        [Column(TypeName = "ntext")]
+        public string language { get; set; }
+
+        [Column(TypeName = "ntext")]
+        public string country { get; set; }
+
         public virtual Category Category { get; set; }
     }
 }

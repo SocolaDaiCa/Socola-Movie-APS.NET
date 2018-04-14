@@ -1,0 +1,366 @@
+﻿
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/layouts/Main.cshtml";
+}
+    <div class="main-wrap">
+        <div class="section section-padding video-list-section">
+            <div class="container">
+                <div class="video-list">
+                    @foreach (var Movie in ViewBag.Movies)
+                    {
+                    <div class="video-item">
+                        <div class="video-thumb">
+                            <img src="images/movies/1.png" alt="Movie thumb">
+                        </div>
+                        <div class="video-details">
+                            <h3 class="video-title"><a href="movie-detail.html">@Movie.name</a></h3>
+                            <p class="video-release-date">July 4, 2017</p>
+                            <div class="ratings-wrap">
+                                <span class="rating">10</span>
+                                <div class="expanded-rating">
+                                    <div class="star-rating">
+                                        <span class="star on"></span>
+                                        <span class="star on"></span>
+                                        <span class="star on"></span>
+                                        <span class="star on"></span>
+                                        <span class="star on"></span>
+                                        <span class="star"></span>
+                                        <span class="star"></span>
+                                        <span class="star"></span>
+                                        <span class="star"></span>
+                                        <span class="star"></span>
+                                    </div>
+                                    <div class="user-voted">
+                                        <i class="fa fa-user"></i> 150 Votes
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="video-attributes">
+                                <p class="cast"><label>Actors:</label> @Model.acctors</p>
+                                <p class="duration"><label>Time:</label> @Model.lenth</p>
+                                <p class="genre"><label>Genres:</label> </p>
+                                <p class="country"><label>Country: </label> @Model.country</p>
+                                <p class="language"><label>Language: </label> @Model.language</p>
+                            </div>
+                            <div class="share-on">
+                                <label>Share: </label>
+                                <div class="share-social">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="watch-now-wrap">
+                            <a class="btn-watch-now" href="/Movies/Details/@Movie.id">Watch Now</a>
+                        </div>
+                    </div>
+                    }
+                    @*<div class="video-item">
+                <div class="video-thumb">
+                    <img src="images/movies/1.png" alt="Movie thumb">
+                </div>
+                <div class="video-details">
+                    <h3 class="video-title"><a href="movie-detail.html">Wonder Women</a></h3>
+                    <p class="video-release-date">July 4, 2017</p>
+                    <div class="ratings-wrap">
+                        <span class="rating">10</span>
+                        <div class="expanded-rating">
+                            <div class="star-rating">
+                                <span class="star on"></span>
+                                <span class="star on"></span>
+                                <span class="star on"></span>
+                                <span class="star on"></span>
+                                <span class="star on"></span>
+                                <span class="star"></span>
+                                <span class="star"></span>
+                                <span class="star"></span>
+                                <span class="star"></span>
+                                <span class="star"></span>
+                            </div>
+                            <div class="user-voted">
+                                <i class="fa fa-user"></i> 150 Votes
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-attributes">
+                        <p class="cast"><label>Actors:</label> </p>
+                        <p class="duration"><label>Time:</label> </p>
+                        <p class="genre"><label>Genres:</label> Action, Drama</p>
+                        <p class="country"><label>Country: </label> </p>
+                        <p class="language"><label>Language: </label> English</p>
+                    </div>
+                    <div class="share-on">
+                        <label>Share: </label>
+                        <div class="share-social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="watch-now-wrap">
+                    <a class="btn-watch-now" href="movie-detail.html">Watch Now</a>
+                </div>
+            </div>
+            <div class="video-item">
+            <div class="video-thumb">
+                <img src="images/movies/2.png" alt="Movie thumb">
+            </div>
+            <div class="video-details">
+                <h3 class="video-title"><a href="movie-detail.html">Captain Underpants</a></h3>
+                <p class="video-release-date">July 4, 2017</p>
+                <div class="ratings-wrap">
+                    <span class="rating">10</span>
+                    <div class="expanded-rating">
+                        <div class="star-rating">
+                            <span class="star on"></span>
+                            <span class="star on"></span>
+                            <span class="star on"></span>
+                            <span class="star on"></span>
+                            <span class="star on"></span>
+                            <span class="star"></span>
+                            <span class="star"></span>
+                            <span class="star"></span>
+                            <span class="star"></span>
+                            <span class="star"></span>
+                        </div>
+                        <div class="user-voted">
+                            <i class="fa fa-user"></i> 150 Votes
+                        </div>
+                    </div>
+                </div>
+                <div class="video-attributes">
+                    <p class="cast"><label>Actors:</label> Tata Tong, Megan, Carri Dummy Crud</p>
+                    <p class="duration"><label>Time:</label> 156 Minutes</p>
+                    <p class="genre"><label>Genres:</label> Action, Drama</p>
+                    <p class="country"><label>Country: </label> USA</p>
+                    <p class="language"><label>Language: </label> English</p>
+                </div>
+                <div class="share-on">
+                    <label>Share: </label>
+                    <div class="share-social">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="watch-now-wrap">
+                <a class="btn-watch-now" href="movie-detail.html">Watch Now</a>
+            </div>
+        </div>
+        <div class="video-item">
+            <div class="video-thumb">
+                <img src="images/movies/3.png" alt="Movie thumb">
+            </div>
+            <div class="video-details">
+                <h3 class="video-title"><a href="movie-detail.html">City Truck</a></h3>
+                <p class="video-release-date">July 4, 2017</p>
+                <div class="ratings-wrap">
+                    <span class="rating">10</span>
+                    <div class="expanded-rating">
+                        <div class="star-rating">
+                            <span class="star on"></span>
+                            <span class="star on"></span>
+                            <span class="star on"></span>
+                            <span class="star on"></span>
+                            <span class="star on"></span>
+                            <span class="star"></span>
+                            <span class="star"></span>
+                            <span class="star"></span>
+                            <span class="star"></span>
+                            <span class="star"></span>
+                        </div>
+                        <div class="user-voted">
+                            <i class="fa fa-user"></i> 150 Votes
+                        </div>
+                    </div>
+                </div>
+                <div class="video-attributes">
+                    <p class="cast"><label>Actors:</label> Tata Tong, Megan, Carri Dummy Crud</p>
+                    <p class="duration"><label>Time:</label> 156 Minutes</p>
+                    <p class="genre"><label>Genres:</label> Action, Drama</p>
+                    <p class="country"><label>Country: </label> USA</p>
+                    <p class="language"><label>Language: </label> English</p>
+                </div>
+                <div class="share-on">
+                    <label>Share: </label>
+                    <div class="share-social">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="watch-now-wrap">
+                <a class="btn-watch-now" href="movie-detail.html">Watch Now</a>
+            </div>
+        </div>
+        <div class="video-item">
+            <div class="video-thumb">
+                <img src="images/movies/4.png" alt="Movie thumb">
+            </div>
+            <div class="video-details">
+                <h3 class="video-title"><a href="movie-detail.html">Dark Night - 2</a></h3>
+                <p class="video-release-date">July 4, 2017</p>
+                <div class="ratings-wrap">
+                    <span class="rating">10</span>
+                    <div class="expanded-rating">
+                        <div class="star-rating">
+                            <span class="star on"></span>
+                            <span class="star on"></span>
+                            <span class="star on"></span>
+                            <span class="star on"></span>
+                            <span class="star on"></span>
+                            <span class="star"></span>
+                            <span class="star"></span>
+                            <span class="star"></span>
+                            <span class="star"></span>
+                            <span class="star"></span>
+                        </div>
+                        <div class="user-voted">
+                            <i class="fa fa-user"></i> 150 Votes
+                        </div>
+                    </div>
+                </div>
+                <div class="video-attributes">
+                    <p class="cast"><label>Actors:</label> Tata Tong, Megan, Carri Dummy Crud</p>
+                    <p class="duration"><label>Time:</label> 156 Minutes</p>
+                    <p class="genre"><label>Genres:</label> Action, Drama</p>
+                    <p class="country"><label>Country: </label> USA</p>
+                    <p class="language"><label>Language: </label> English</p>
+                </div>
+                <div class="share-on">
+                    <label>Share: </label>
+                    <div class="share-social">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="watch-now-wrap">
+                <a class="btn-watch-now" href="movie-detail.html">Watch Now</a>
+            </div>
+        </div>
+        <div class="video-item">
+            <div class="video-thumb">
+                <img src="images/movies/5.png" alt="Movie thumb">
+            </div>
+            <div class="video-details">
+                <h3 class="video-title"><a href="movie-detail.html">Devine Girl</a></h3>
+                <p class="video-release-date">July 4, 2017</p>
+                <div class="ratings-wrap">
+                    <span class="rating">10</span>
+                    <div class="expanded-rating">
+                        <div class="star-rating">
+                            <span class="star on"></span>
+                            <span class="star on"></span>
+                            <span class="star on"></span>
+                            <span class="star on"></span>
+                            <span class="star on"></span>
+                            <span class="star"></span>
+                            <span class="star"></span>
+                            <span class="star"></span>
+                            <span class="star"></span>
+                            <span class="star"></span>
+                        </div>
+                        <div class="user-voted">
+                            <i class="fa fa-user"></i> 150 Votes
+                        </div>
+                    </div>
+                </div>
+                <div class="video-attributes">
+                    <p class="cast"><label>Actors:</label> Tata Tong, Megan, Carri Dummy Crud</p>
+                    <p class="duration"><label>Time:</label> 156 Minutes</p>
+                    <p class="genre"><label>Genres:</label> Action, Drama</p>
+                    <p class="country"><label>Country: </label> USA</p>
+                    <p class="language"><label>Language: </label> English</p>
+                </div>
+                <div class="share-on">
+                    <label>Share: </label>
+                    <div class="share-social">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="watch-now-wrap">
+                <a class="btn-watch-now" href="movie-detail.html">Watch Now</a>
+            </div>
+        </div>
+        <div class="video-item">
+            <div class="video-thumb">
+                <img src="images/movies/6.png" alt="Movie thumb">
+            </div>
+            <div class="video-details">
+                <h3 class="video-title"><a href="movie-detail.html">National Heroes</a></h3>
+                <p class="video-release-date">July 4, 2017</p>
+                <div class="ratings-wrap">
+                    <span class="rating">10</span>
+                    <div class="expanded-rating">
+                        <div class="star-rating">
+                            <span class="star on"></span>
+                            <span class="star on"></span>
+                            <span class="star on"></span>
+                            <span class="star on"></span>
+                            <span class="star on"></span>
+                            <span class="star"></span>
+                            <span class="star"></span>
+                            <span class="star"></span>
+                            <span class="star"></span>
+                            <span class="star"></span>
+                        </div>
+                        <div class="user-voted">
+                            <i class="fa fa-user"></i> 150 Votes
+                        </div>
+                    </div>
+                </div>
+                <div class="video-attributes">
+                    <p class="cast"><label>Actors:</label> Tata Tong, Megan, Carri Dummy Crud</p>
+                    <p class="duration"><label>Time:</label> 156 Minutes</p>
+                    <p class="genre"><label>Genres:</label> Action, Drama</p>
+                    <p class="country"><label>Country: </label> USA</p>
+                    <p class="language"><label>Language: </label> English</p>
+                </div>
+                <div class="share-on">
+                    <label>Share: </label>
+                    <div class="share-social">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="watch-now-wrap">
+                <a class="btn-watch-now" href="movie-detail.html">Watch Now</a>
+            </div>
+        </div>*@
+
+                    <!-- Video Pagination -->
+                    <nav class="navigation pagination" role="navigation">
+                        <div class="nav-links">
+                            <span class="current-page">Page 2 of 14</span>
+                            <a class="prev page-numbers" href="#"><i class="fa fa-caret-left"></i></a>
+                            <a class="page-numbers" href="#">1</a>
+                            <span class="page-numbers current">2</span>
+                            <a class="page-numbers" href="#">3</a>
+                            <a class="page-numbers" href="#">4</a>
+                            <a class="next page-numbers" href="#"><i class="fa fa-caret-right"></i></a>
+                        </div>
+                    </nav>
+                    <!-- Video Pagination End -->
+                </div>
+            </div>
+        </div>
+    </div>

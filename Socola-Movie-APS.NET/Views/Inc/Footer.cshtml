@@ -10,7 +10,7 @@
                     <div class="widget about-widget">
                         <div class="widget-inner">
                             <a class="footer-logo" href="index-2.html">
-                                <img src="images/template/logo-footer.png" alt="Footer logo">
+                                <img src="~/images/template/logo-footer.png" alt="Footer logo">
                             </a>
                             <p class="about-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, ducimus, atque. Praesentium suscipit provident explicabo dignissimos nostrum numquam deserunt earum accusantium et fugit.</p>
                             <div class="footer-social">
@@ -41,33 +41,12 @@
                         <h3 class="widget-title">Video Category</h3>
                         <div class="widget-inner">
                             <ul class="widget-cat">
-                                <li class="cat">
-                                    <a href="#">Movies</a>
-                                </li>
-                                <li class="cat">
-                                    <a href="#">Crime Video</a>
-                                </li>
-                                <li class="cat">
-                                    <a href="#">Dramas</a>
-                                </li>
-                                <li class="cat">
-                                    <a href="#">TV Show</a>
-                                </li>
-                                <li class="cat">
-                                    <a href="#">Popular Video</a>
-                                </li>
-                                <li class="cat">
-                                    <a href="#">Episodes</a>
-                                </li>
-                                <li class="cat">
-                                    <a href="#">Comedy Video</a>
-                                </li>
-                                <li class="cat">
-                                    <a href="#">WWE</a>
-                                </li>
-                                <li class="cat">
-                                    <a href="#">Action &amp; Adventure</a>
-                                </li>
+                                @foreach(var Category in ViewBag.Categories)
+                                {
+                                    <li class="cat">
+                                        <a href="#">@Category.name</a>
+                                    </li>
+                                }
                             </ul>
                         </div>
                     </div>

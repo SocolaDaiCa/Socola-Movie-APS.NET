@@ -17,7 +17,8 @@ namespace Socola_Movie_APS.NET.Areas.Admin
             context.MapRoute(
                 "Admin_default",
                 "Admin/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { action = "Index", id = UrlParameter.Optional },
+                new[] { "Socola_Movie_APS.NET.Areas.Admin.Controllers" }
             );
         }
     }
