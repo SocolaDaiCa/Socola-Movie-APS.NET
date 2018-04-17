@@ -1,4 +1,5 @@
 ﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -24,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>2.5</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -97,6 +99,102 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Admin\data\flot-data.js" />
+    <Content Include="Assets\Admin\data\morris-data.js" />
+    <Content Include="Assets\Admin\dist\css\sb-admin-2.css" />
+    <Content Include="Assets\Admin\dist\css\sb-admin-2.min.css" />
+    <Content Include="Assets\Admin\dist\js\sb-admin-2.js" />
+    <Content Include="Assets\Admin\dist\js\sb-admin-2.min.js" />
+    <Content Include="Assets\Admin\js\sb-admin-2.js" />
+    <Content Include="Assets\Admin\vendor\bootstrap-social\bootstrap-social.css" />
+    <Content Include="Assets\Admin\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Assets\Admin\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Assets\Admin\vendor\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Assets\Admin\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Assets\Admin\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Assets\Admin\vendor\datatables-plugins\dataTables.bootstrap.css" />
+    <Content Include="Assets\Admin\vendor\datatables-plugins\dataTables.bootstrap.js" />
+    <Content Include="Assets\Admin\vendor\datatables-plugins\dataTables.bootstrap.min.js" />
+    <Content Include="Assets\Admin\vendor\datatables-plugins\index.html" />
+    <Content Include="Assets\Admin\vendor\datatables-responsive\dataTables.responsive.css" />
+    <Content Include="Assets\Admin\vendor\datatables-responsive\dataTables.responsive.js" />
+    <Content Include="Assets\Admin\vendor\datatables\css\dataTables.bootstrap.css" />
+    <Content Include="Assets\Admin\vendor\datatables\css\dataTables.bootstrap.min.css" />
+    <Content Include="Assets\Admin\vendor\datatables\css\dataTables.bootstrap4.css" />
+    <Content Include="Assets\Admin\vendor\datatables\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Assets\Admin\vendor\datatables\css\dataTables.foundation.css" />
+    <Content Include="Assets\Admin\vendor\datatables\css\dataTables.foundation.min.css" />
+    <Content Include="Assets\Admin\vendor\datatables\css\dataTables.jqueryui.css" />
+    <Content Include="Assets\Admin\vendor\datatables\css\dataTables.jqueryui.min.css" />
+    <Content Include="Assets\Admin\vendor\datatables\css\dataTables.material.css" />
+    <Content Include="Assets\Admin\vendor\datatables\css\dataTables.material.min.css" />
+    <Content Include="Assets\Admin\vendor\datatables\css\dataTables.semanticui.css" />
+    <Content Include="Assets\Admin\vendor\datatables\css\dataTables.semanticui.min.css" />
+    <Content Include="Assets\Admin\vendor\datatables\css\dataTables.uikit.css" />
+    <Content Include="Assets\Admin\vendor\datatables\css\dataTables.uikit.min.css" />
+    <Content Include="Assets\Admin\vendor\datatables\css\jquery.dataTables.css" />
+    <Content Include="Assets\Admin\vendor\datatables\css\jquery.dataTables.min.css" />
+    <Content Include="Assets\Admin\vendor\datatables\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Assets\Admin\vendor\datatables\images\favicon.ico" />
+    <Content Include="Assets\Admin\vendor\datatables\images\sort_asc.png" />
+    <Content Include="Assets\Admin\vendor\datatables\images\sort_asc_disabled.png" />
+    <Content Include="Assets\Admin\vendor\datatables\images\sort_both.png" />
+    <Content Include="Assets\Admin\vendor\datatables\images\sort_desc.png" />
+    <Content Include="Assets\Admin\vendor\datatables\images\sort_desc_disabled.png" />
+    <Content Include="Assets\Admin\vendor\datatables\js\dataTables.bootstrap.js" />
+    <Content Include="Assets\Admin\vendor\datatables\js\dataTables.bootstrap.min.js" />
+    <Content Include="Assets\Admin\vendor\datatables\js\dataTables.bootstrap4.js" />
+    <Content Include="Assets\Admin\vendor\datatables\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Assets\Admin\vendor\datatables\js\dataTables.foundation.js" />
+    <Content Include="Assets\Admin\vendor\datatables\js\dataTables.foundation.min.js" />
+    <Content Include="Assets\Admin\vendor\datatables\js\dataTables.jqueryui.js" />
+    <Content Include="Assets\Admin\vendor\datatables\js\dataTables.jqueryui.min.js" />
+    <Content Include="Assets\Admin\vendor\datatables\js\dataTables.material.js" />
+    <Content Include="Assets\Admin\vendor\datatables\js\dataTables.material.min.js" />
+    <Content Include="Assets\Admin\vendor\datatables\js\dataTables.semanticui.js" />
+    <Content Include="Assets\Admin\vendor\datatables\js\dataTables.semanticui.min.js" />
+    <Content Include="Assets\Admin\vendor\datatables\js\dataTables.uikit.js" />
+    <Content Include="Assets\Admin\vendor\datatables\js\dataTables.uikit.min.js" />
+    <Content Include="Assets\Admin\vendor\datatables\js\jquery.dataTables.js" />
+    <Content Include="Assets\Admin\vendor\datatables\js\jquery.dataTables.min.js" />
+    <Content Include="Assets\Admin\vendor\datatables\js\jquery.js" />
+    <Content Include="Assets\Admin\vendor\flot-tooltip\jquery.flot.tooltip.js" />
+    <Content Include="Assets\Admin\vendor\flot-tooltip\jquery.flot.tooltip.min.js" />
+    <Content Include="Assets\Admin\vendor\flot-tooltip\jquery.flot.tooltip.source.js" />
+    <Content Include="Assets\Admin\vendor\flot\excanvas.js" />
+    <Content Include="Assets\Admin\vendor\flot\excanvas.min.js" />
+    <Content Include="Assets\Admin\vendor\flot\jquery.colorhelpers.js" />
+    <Content Include="Assets\Admin\vendor\flot\jquery.flot.canvas.js" />
+    <Content Include="Assets\Admin\vendor\flot\jquery.flot.categories.js" />
+    <Content Include="Assets\Admin\vendor\flot\jquery.flot.crosshair.js" />
+    <Content Include="Assets\Admin\vendor\flot\jquery.flot.errorbars.js" />
+    <Content Include="Assets\Admin\vendor\flot\jquery.flot.fillbetween.js" />
+    <Content Include="Assets\Admin\vendor\flot\jquery.flot.image.js" />
+    <Content Include="Assets\Admin\vendor\flot\jquery.flot.js" />
+    <Content Include="Assets\Admin\vendor\flot\jquery.flot.navigate.js" />
+    <Content Include="Assets\Admin\vendor\flot\jquery.flot.pie.js" />
+    <Content Include="Assets\Admin\vendor\flot\jquery.flot.resize.js" />
+    <Content Include="Assets\Admin\vendor\flot\jquery.flot.selection.js" />
+    <Content Include="Assets\Admin\vendor\flot\jquery.flot.stack.js" />
+    <Content Include="Assets\Admin\vendor\flot\jquery.flot.symbol.js" />
+    <Content Include="Assets\Admin\vendor\flot\jquery.flot.threshold.js" />
+    <Content Include="Assets\Admin\vendor\flot\jquery.flot.time.js" />
+    <Content Include="Assets\Admin\vendor\flot\jquery.js" />
+    <Content Include="Assets\Admin\vendor\font-awesome\css\font-awesome.css" />
+    <Content Include="Assets\Admin\vendor\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Assets\Admin\vendor\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Assets\Admin\vendor\font-awesome\HELP-US-OUT.txt" />
+    <Content Include="Assets\Admin\vendor\jquery\jquery.js" />
+    <Content Include="Assets\Admin\vendor\jquery\jquery.min.js" />
+    <Content Include="Assets\Admin\vendor\metisMenu\metisMenu.css" />
+    <Content Include="Assets\Admin\vendor\metisMenu\metisMenu.js" />
+    <Content Include="Assets\Admin\vendor\metisMenu\metisMenu.min.css" />
+    <Content Include="Assets\Admin\vendor\metisMenu\metisMenu.min.js" />
+    <Content Include="Assets\Admin\vendor\morrisjs\morris.css" />
+    <Content Include="Assets\Admin\vendor\morrisjs\morris.js" />
+    <Content Include="Assets\Admin\vendor\morrisjs\morris.min.js" />
+    <Content Include="Assets\Admin\vendor\raphael\raphael.js" />
+    <Content Include="Assets\Admin\vendor\raphael\raphael.min.js" />
     <Content Include="Assets\css\bootstrap.min.css" />
     <Content Include="Assets\css\font-awesome.min.css" />
     <Content Include="Assets\css\magnific-popup.css" />
@@ -104,6 +202,10 @@
     <Content Include="Assets\css\owl.transitions.css" />
     <Content Include="Assets\css\responsive.css" />
     <Content Include="Assets\css\style.css" />
+    <Content Include="Assets\dist\css\sb-admin-2.css" />
+    <Content Include="Assets\dist\css\sb-admin-2.min.css" />
+    <Content Include="Assets\dist\js\sb-admin-2.js" />
+    <Content Include="Assets\dist\js\sb-admin-2.min.js" />
     <Content Include="Assets\fonts\css9801.css" />
     <Content Include="Assets\fonts\fontawesome-webfont3e6e.html" />
     <Content Include="Assets\fonts\fontawesome-webfont3e6e.svg" />
@@ -134,6 +236,59 @@
     <Content Include="Assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Assets\fonts\glyphicons-halflings-regulard41d.eot" />
     <Content Include="Assets\maps\api\js5dc6" />
+    <Content Include="Assets\Admin\vendor\bootstrap-social\bootstrap-social.less" />
+    <Content Include="Assets\Admin\vendor\bootstrap-social\bootstrap-social.scss" />
+    <Content Include="Assets\Admin\vendor\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Assets\Admin\vendor\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Assets\Admin\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Assets\Admin\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Assets\Admin\vendor\datatables-responsive\dataTables.responsive.scss" />
+    <Content Include="Assets\Admin\vendor\datatables\images\Sorting icons.psd" />
+    <Content Include="Assets\Admin\vendor\font-awesome\css\font-awesome.css.map" />
+    <Content Include="Assets\Admin\vendor\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Assets\Admin\vendor\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Assets\Admin\vendor\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Assets\Admin\vendor\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Assets\Admin\vendor\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Assets\Admin\vendor\font-awesome\less\animated.less" />
+    <Content Include="Assets\Admin\vendor\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Assets\Admin\vendor\font-awesome\less\core.less" />
+    <Content Include="Assets\Admin\vendor\font-awesome\less\extras.less" />
+    <Content Include="Assets\Admin\vendor\font-awesome\less\fixed-width.less" />
+    <Content Include="Assets\Admin\vendor\font-awesome\less\font-awesome.less" />
+    <Content Include="Assets\Admin\vendor\font-awesome\less\icons.less" />
+    <Content Include="Assets\Admin\vendor\font-awesome\less\larger.less" />
+    <Content Include="Assets\Admin\vendor\font-awesome\less\list.less" />
+    <Content Include="Assets\Admin\vendor\font-awesome\less\mixins.less" />
+    <Content Include="Assets\Admin\vendor\font-awesome\less\path.less" />
+    <Content Include="Assets\Admin\vendor\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Assets\Admin\vendor\font-awesome\less\screen-reader.less" />
+    <Content Include="Assets\Admin\vendor\font-awesome\less\spinning.less" />
+    <Content Include="Assets\Admin\vendor\font-awesome\less\stacked.less" />
+    <Content Include="Assets\Admin\vendor\font-awesome\less\variables.less" />
+    <Content Include="Assets\Admin\vendor\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Assets\Admin\vendor\font-awesome\scss\_animated.scss" />
+    <Content Include="Assets\Admin\vendor\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Assets\Admin\vendor\font-awesome\scss\_core.scss" />
+    <Content Include="Assets\Admin\vendor\font-awesome\scss\_extras.scss" />
+    <Content Include="Assets\Admin\vendor\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Assets\Admin\vendor\font-awesome\scss\_icons.scss" />
+    <Content Include="Assets\Admin\vendor\font-awesome\scss\_larger.scss" />
+    <Content Include="Assets\Admin\vendor\font-awesome\scss\_list.scss" />
+    <Content Include="Assets\Admin\vendor\font-awesome\scss\_mixins.scss" />
+    <Content Include="Assets\Admin\vendor\font-awesome\scss\_path.scss" />
+    <Content Include="Assets\Admin\vendor\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Assets\Admin\vendor\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="Assets\Admin\vendor\font-awesome\scss\_spinning.scss" />
+    <Content Include="Assets\Admin\vendor\font-awesome\scss\_stacked.scss" />
+    <Content Include="Assets\Admin\vendor\font-awesome\scss\_variables.scss" />
+    <Content Include="Areas\Admin\Views\layouts\Main.cshtml" />
+    <Content Include="Areas\Admin\Views\Inc\NavLeft.cshtml" />
+    <Content Include="Areas\Admin\Views\Movies\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Movies\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Movies\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Movies\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Movies\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="images\bg\page-header.png" />
     <Content Include="images\bg\pattern.png" />
@@ -219,6 +374,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoriesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MoviesController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Controllers\SiteController.cs" />
@@ -226,6 +382,7 @@
     <Compile Include="Entity\Movy.cs" />
     <Compile Include="Entity\SocolaMovieEntity.cs" />
     <Compile Include="Entity\sysdiagram.cs" />
+    <Compile Include="Entity\User.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -275,6 +432,7 @@
     <Folder Include="Views\Site\" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
@@ -282,6 +440,7 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>

@@ -133,7 +133,9 @@ namespace Socola_Movie_APS.NET.Controllers
         {
             String q = Request["q"];
             var movies = db.Movies.Where(m => m.name.Contains(q));
+            
             ViewBag.Movies = movies;
+            ViewBag.q = q;
             return View(movies.ToList());
         }
     }
